@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=IBM+Plex+Sans:wght@400;500;700&display=swap");
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  color: whitesmoke;
+  background: darkslategray;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid slategray;
+}
+
+h1 {
+  margin: 0;
+  font: 400 20px "Press Start 2P", monospace;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.widget {
+  position: relative;
+  padding: 16px;
+  border: 1px solid lightslategray;
+  border-radius: 10px;
+  background: darkslateblue;
+}
+
+.widget--wordle {
+    grid-row: span 2; }
+
+button, select, input {
+  font: inherit;
+  color: whitesmoke;
+  border: 1px solid lightslategray;
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 500;
+  background: steelblue;
+}
+
+button:hover {
+    background: cornflowerblue;
+    }
+
+button:active {
+    background: slateblue;
+    }
+
+
+button:disabled {
+    opacity: 0.5; cursor: not-allowed;
+    }
+
+select, input {
+    background: midnightblue; }
+
+button:focus-visible, select:focus, input:focus {
+  outline: 2px solid powderblue;
+  outline-offset: 2px;
+}
+
+.widget button.delete {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: indianred;
+  border-color: salmon;
+}
+
+.widget h3 {
+ margin: 0 0 8px; font-size: 17px;
+ }
+
+.muted {
+    margin: 0 0 10px; color: gainsboro;
+    }
+
+.widget-controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.wordle-feedback, .rps-result {
+    min-height: 22px;
+    }
+
+.wordle-form {
+    display: flex; gap: 8px; margin-bottom: 10px; }
+
+.wordle-form input {
+    flex: 1; }
+
+.wordle-attempts {
+    display: flex; flex-direction: column; gap: 6px; }
+
+.attempt-row {
+    display: flex; gap: 6px; }
+
+.attempt-cell {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.attempt-cell.correct {
+    background: seagreen; }
+
+.attempt-cell.present {
+    background: peru; }
+
+.attempt-cell.absent {
+    background: dimgray; }
+
+.dice {
+  font-size: 56px;
+  text-align: center;
+  margin: 12px 0;
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+.rolling {
+    opacity: .8; transform: scale(1.08); }
+
+.card-preview {
+  width: 72px;
+  height: 96px;
+  margin: 6px 0 10px;
+  border: 1px solid lightsteelblue;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  font-weight: 700;
+  background: slateblue;
+}
+
+@media (max-width: 820px) {
+  header {
+    flex-direction: column; align-items: stretch; }
+
+  .widget--wordle {
+    grid-row: span 1; }
+}
